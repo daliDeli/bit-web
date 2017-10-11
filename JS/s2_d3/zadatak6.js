@@ -1,8 +1,14 @@
-var sum = 0;
+
 var arr = [0, 1, 2, 3, 4];
 
-for (var i = 0; i < arr.length; i++) {
-    sum += arr[i] * arr[i];
-}
 
-console.log(sum);
+
+function square (array){
+    var sum =1;
+    for( var i = 0; i < array.length; i++){
+        sum = array[i] * array[i];
+        console.log(sum);
+    }
+  
+}
+square(arr);
