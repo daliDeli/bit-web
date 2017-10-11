@@ -1,11 +1,14 @@
-
+@font-face{
+    font-family: "AmaticSC-Regular";
+    src:url("font/novi_font/AmaticSC-Regular.ttf");
+}
 body{
-     font-family: 'Fascinate Inline', cursive;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    
 }
 
 .first{
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Fascinate Inline', cursive;
     font-weight: bold;
 }
 .second{
@@ -21,4 +24,7 @@ span {
     color: hotpink;
     font-weight: bold;
     font-style: italic;
+}
+h1 {
+    font-family: "AmaticSC-Regular";
 }
