@@ -1,0 +1,24 @@
+
+body{
+     font-family: 'Fascinate Inline', cursive;
+   
+}
+
+.first{
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+.second{
+    font-family:'Times New Roman', Times, serif;
+    font-style: oblique;
+
+}
+/*.third{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}*/
+span {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: hotpink;
+    font-weight: bold;
+    font-style: italic;
+}
