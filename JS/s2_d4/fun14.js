@@ -4,7 +4,9 @@ function retirement(gender, yearOfBirth) {
     var retirementF = 60;
     var yearsLeft;
 
-    if(gender === "f" || gender === "female") {
+    if (age > retirementF && age > retirementM) {
+        yearsLeft = "This person is already in retirement.";}
+    else if (gender === "f" || gender === "female") {
         yearsLeft = retirementF - age;
     } else if (gender === "m" || gender === "male") {
         yearsLeft = retirementM - age;
@@ -15,7 +17,7 @@ function retirement(gender, yearOfBirth) {
     return yearsLeft;
 }
 
-var gender = "ur";
-var year = 1989;
+var gender = "m";
+var year = 1923;
 
 console.log(retirement(gender, year));

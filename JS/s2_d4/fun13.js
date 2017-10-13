@@ -17,3 +17,22 @@ function convert(arr){
 var dado = ["24645", "s34634", "45357645j", "5474576", "346y90"];
 
 console.log(convert(dado));
+
+// function convert(arr){
+//     var nums = [];
+//     var ind = 0;
+
+//     while(ind < arr.length){
+//         var novi = parseInt(arr[ind]);
+//         if(isNaN(parseInt(novi)) === false){
+//             nums[ind] = novi;
+//             ind++;
+        
+//     }
+//     return nums;
+// }
+// }
+
+// var dado = ["24645", "s34634", "45357645j", "5474576", "346y90"];
+
+// console.log(convert(dado));
