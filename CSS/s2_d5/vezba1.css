@@ -1,0 +1,51 @@
+#container {
+    text-align: center;
+    margin: 0px auto;
+}
+
+h1 {
+    color: rgb(255, 60, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.table {
+    align: center;
+    border-collapse: collapse;
+    margin: 0px auto;
+    font-family: Arial, Helvetica, sans-serif;    
+    font-size: 15px;
+}
+
+
+
+#header {
+    background-color:  rgb(255, 60, 0);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(233, 233, 233);
+    
+}
+
+tr:hover {
+    background-color: rgb(255, 174, 0);
+    cursor: not-allowed;
+}
+
+.table td, th {
+    padding: 10px 10px 10px 10px;
+}
+
+.image-cell {
+    text-align: center;
+}
+
+.image-cell img{
+    height: 100px;
+}
