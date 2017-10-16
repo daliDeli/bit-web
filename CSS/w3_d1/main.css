@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "pera";
+    src: url('../fonts/Sedgwick_Ave_Display/SedgwickAveDisplay-Regular.ttf');
+}
+p{
+    font-size: 23px;
+}
+
+#prviParagraf{
+
+    text-align: left;
+}
+
+#drugiParagraf {
+  text-align: right;
+}
+
+#treciParagraf {
+  text-align: center;
+}
+h1{
+    text-shadow: 2px 2px 2px gray;
+}
+.linkovi{
+    color: red;
+    text-shadow: -13px -8px 9px rgba(113, 163, 94, 0.86);
+    font-size: 23px;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    color: greenyellow;
+}
+
+a:active{
+    color: blue;
+}
