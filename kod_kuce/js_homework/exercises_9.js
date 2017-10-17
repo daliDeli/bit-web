@@ -1,3 +1,5 @@
+"use strict"
+
 function hideEmail(email) {
     var hiddenEmail = "";
     for (var i = 0; i < email.length; i++) {

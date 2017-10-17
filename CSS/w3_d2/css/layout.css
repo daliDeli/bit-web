@@ -1,0 +1,28 @@
+#container{
+    width: 100%;
+    
+    
+}
+article{
+    width: 80%;
+    border: 1px black solid;
+    margin: 2% auto;
+    box-sizing: border-box;
+    padding: 3%;
+}
+img{
+    width: 100%;
+}
+
+@media only screen and (min-width: 576px){
+    article{
+        width: 100%;
+    }
+    img{
+        width: 30%;
+        float: left;
+        margin-right: 5%;
+    }
+    
+}
+@media only screen and (min-width: 768px)

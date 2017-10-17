@@ -1,3 +1,5 @@
+"use strict"
+
 function noFalsy(array) {
     var purgedArray = [];
     var counter = -1;

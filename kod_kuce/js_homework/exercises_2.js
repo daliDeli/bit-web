@@ -1,3 +1,5 @@
+"use strict"
+
 function purgeArr(array) {
     var purgedArray = [];
     var counter = -1;
@@ -9,19 +11,22 @@ function purgeArr(array) {
             } else {
                 counter--;
             }
+        }else{
+            counter--;
         }
     }
     return purgedArray;
 }
 
-function inToAString(array) {
-    var inToAString = [];
-    for (var i = 0; i < array.length; i++) {
-        inToAString = String(array[i]);
+
+// function inToAString(array) {
+//     var inToAString = [];
+//     for (var i = 0; i < array.length; i++) {
+//         inToAString = String(array[i]);
         
-    }
-    return inToAString;
-}
+//     }
+//     return inToAString;
+// }
 
 function concatStr(array){
     var concatStr= "";
@@ -32,9 +37,12 @@ function concatStr(array){
     return concatStr;
 }
 
+var arr = [NaN, 0, 15, false, -22, ' ', undefined, 47, null];
+console.log(concatStr(purgeArr(arr)));
 
-var arr = [NaN, 0, 15, false, -22, '', undefined, 47, null];
 
- console.log(concatStr(purgeArr(arr)));
+
+
+ 
 
 

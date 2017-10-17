@@ -1,40 +1,77 @@
-@font-face {
-    font-family: "pera";
-    src: url('../fonts/Sedgwick_Ave_Display/SedgwickAveDisplay-Regular.ttf');
+body{
+    width: 100%;
+    height: 100%;
 }
-p{
-    font-size: 23px;
+#container{
+    width: 960px;
+    margin: 0px auto 0px auto;
+}
+#slidza{
+    width: 960px;
+    height: 500px;
+}
+.box{
+    width: 300px;
+    height: 200px;
+}
+.red{
+    background: red;
+}
+.black{
+    background: black;
+}
+.article{
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin: 10px;
 }
 
-#prviParagraf{
-
+h3{
+    text-align: center;
+}
+.list{
+    background: orange;
+    width: 250px;
+    height: 220px;
+    float: right;
+    
+}
+#drugalista{
     text-align: left;
+    padding: 10px;
+    
 }
+.element2{
+    list-style-type: none;
+    border-bottom: 1px black solid;
+    padding-top: 15px;
 
-#drugiParagraf {
-  text-align: right;
 }
+.clear{
+    clear: left;
+    margin-top: 150px;
+}
+.clear1{
+    float: left;
+    margin-top: 150px;
 
-#treciParagraf {
-  text-align: center;
 }
-h1{
-    text-shadow: 2px 2px 2px gray;
+#prvalista{
+    background: red;
+    height: 50px;
 }
-.linkovi{
-    color: red;
-    text-shadow: -13px -8px 9px rgba(113, 163, 94, 0.86);
-    font-size: 23px;
+#prvalista > ul{
+    text-align: center;
 }
+    
+#prvalista > ul > a > li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 15px;
+    float: right;
+    color: white;
+}
+    
+   
 
-a:visited{
-    color: black;
-}
-
-a:hover{
-    color: greenyellow;
-}
-
-a:active{
-    color: blue;
-}

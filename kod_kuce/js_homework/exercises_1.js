@@ -1,6 +1,8 @@
 
+"use strict"
 
 function putAStringIn(index, string){
+
     var startingString = "My random string";
     var arr = [];
     for (var i = 0; i < startingString.length; i++) {
