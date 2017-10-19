@@ -1,0 +1,19 @@
+#container {
+  width: 50%;
+  margin: 2em auto;
+  padding: 2em;
+  text-align: center; }
+
+header {
+  background: #a87e7e; }
+
+header h1 {
+  font-style: italic;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+section {
+  color: #ebd194;
+  border: 2px double saddlebrown;
+  background: darkgrey; }
+
+/*# sourceMappingURL=main.css.map */

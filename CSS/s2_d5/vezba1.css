@@ -1,51 +1,26 @@
-#container {
-    text-align: center;
-    margin: 0px auto;
+.first{
+    text-align: left;
 }
-
-h1 {
-    color: rgb(255, 60, 0);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
+.second{
+    text-align: right;
 }
-
-.table {
-    align: center;
-    border-collapse: collapse;
-    margin: 0px auto;
-    font-family: Arial, Helvetica, sans-serif;    
-    font-size: 15px;
-}
-
-
-
-#header {
-    background-color:  rgb(255, 60, 0);
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: white;
-}
-
-tr:nth-child(odd) {
-    background-color: rgb(233, 233, 233);
-    
-}
-
-tr:hover {
-    background-color: rgb(255, 174, 0);
-    cursor: not-allowed;
-}
-
-.table td, th {
-    padding: 10px 10px 10px 10px;
-}
-
-.image-cell {
+.third{
     text-align: center;
 }
-
-.image-cell img{
-    height: 100px;
+a{
+    color: red;
+    text-shadow: 47px -3px 19px rgba(223, 140, 131, 0.86);
 }
+a:visited {
+    color:black;
+}
+a:hover{
+    color:green;
+}
+a :active{
+    color:blue;
+
+
+}
+
+
