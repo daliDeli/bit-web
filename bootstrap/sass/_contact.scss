@@ -1,0 +1,22 @@
+.container{
+    form{
+        padding-bottom: 40px;
+        input{
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid gray;
+            margin-bottom: 20px;
+        }
+        textarea{
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid gray;
+            margin-bottom: 30px;
+        }
+        button {
+            color: #fff;
+            border-color: rgb(4, 153, 108);
+            background: rgb(4, 153, 108);
+        }
+    }
+}

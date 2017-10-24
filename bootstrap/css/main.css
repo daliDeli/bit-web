@@ -36,10 +36,34 @@ hr.style-three {
     color: white; }
   .navigation .navbar-light .navbar-nav .nav-link {
     color: white; }
+  .navigation a .nav-link {
+    float: right; }
 
-h2 {
-  color: black;
-  text-align: center;
-  padding: 30px 0 10px 0; }
+.container form {
+  padding-bottom: 40px; }
+  .container form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px; }
+  .container form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 30px; }
+  .container form button {
+    color: #fff;
+    border-color: #04996c;
+    background: #04996c; }
+
+.container-fluid h2 {
+  color: white; }
+.container-fluid button {
+  color: #fff;
+  border-color: #fff; }
+.container-fluid button:hover {
+  color: #04996c;
+  background-color: white;
+  border-color: white; }
 
 /*# sourceMappingURL=main.css.map */
