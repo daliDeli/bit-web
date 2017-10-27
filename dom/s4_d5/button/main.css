@@ -1,0 +1,9 @@
+.background{
+    background: rgb(34, 120, 178);
+}
+.white{
+    background: white;
+}
+.visible{
+    display: none;
+}
