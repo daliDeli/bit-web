@@ -26,6 +26,6 @@ function isThisNaN(arr) {
 
 }
 
-var arr = ["s2", "252652", "221512", "22gg2222", "2533", "sss"];
+var arr = [2, "252652", "22gg2222", "2533", "sss"];
 
 console.log(isThisNaN(convert(arr)));
