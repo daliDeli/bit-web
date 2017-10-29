@@ -14,18 +14,44 @@
 <body>
     <div class="container">
 
-        <h1>Movie List</h1>
+        <h2>Movie List</h2>
         <form action="">
             <input type="text" id="mTitle" value="" placeholder="Title">
             <input type="text" id="mLength" value="" placeholder="Length in min">
+            
             <select name="genre-select" id="genre-select">
                 <option value="none">-</option>
                 <option value="action">Action</option>
                 <option value="drama">Drama</option>
+                <option value="thriller">Thriller</option>
+                <option value="horror">Horror</option>
+                <option value="fantasy">Fantasy</option>
             </select>
+            
             <div id="error"></div>
-            <input type="button" onclick="createMovies()" value="Submit">
+            <input type="button" onclick="createMovies()" value="Create Movie" class="button">
             <div id="listOfMovies"></div>
+        </form>
+    </div>
+
+    <div class="container">
+
+        <h2>Date</h2>
+        <form> 
+            <input type="date" id="date" value="">
+            <input type="button" value="Create Program" onclick="createProgram()" class="button"> 
+            
+            <div id="listOfDates"></div>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Program</h2>
+        <form >
+            <select name="movie" id="chooseMovie"></select>
+            <select name="program" id="chooseProgram"></select>
+            <input type="button" class="button" onclick="addMovieToProgram()" value="Add Movie to Program">
+            <div id="programInfo"></div>
         </form>
     </div>
 
