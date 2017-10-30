@@ -1,0 +1,19 @@
+.bottomborder {
+    border-bottom: black solid 2px;
+
+}
+
+.upper {
+    text-transform: uppercase;
+
+}
+
+.fontcolor {
+    color: fuchsia;
+
+}
+
+.bg{
+
+    background: red;
+}

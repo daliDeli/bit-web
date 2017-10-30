@@ -1,0 +1,18 @@
+div{
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    border: goldenrod 2px double;
+    color: grey
+}
+h1{
+    text-align: center;
+}
+
+input{
+    display: block;
+    padding: 2px;
+}
+.red-border{
+    border: red 1px solid;
+}

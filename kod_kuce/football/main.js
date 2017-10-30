@@ -1,22 +1,24 @@
-
-var div = document.querySelector("div");
-
-function position(div){
-    var player = document.getElementById("player");
-
-    var x = div.clientX;
-    var y = div.clientY;
-
-    player.style.position = "absolute";
-    player.style.left = y;
-    player.style.top = x;
+function position(event){
 
     
+    var player = document.getElementById("player");
+    
+    player.style.left =  event.clientX - 50 + 'px';
+    player.style.top = event.clientY - 50  + 'px';
 }
 
 
 
 
-var divEvent = document.querySelector("div").addEventListener("click", position);
+document.documentElement.addEventListener("click", position);
 
-document.querySelector("button").removeEventListener("click",position); 
+
+
+function remove (event) {
+    
+    document.documentElement.removeEventListener("click",position);   
+
+}
+
+document.querySelector("button").addEventListener("click",remove);
+
