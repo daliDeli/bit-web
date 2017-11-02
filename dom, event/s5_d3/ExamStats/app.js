@@ -1,60 +1,48 @@
-var DataController = (function () {
-    var data = {
-        listOfStudents: [],
+const DataController = ( () => {
+    
+    
+    
+    
+})();
 
-    };
 
-    function Student(name, surname, grade) {
-        this.name = name;
-        this.surname = surname;
-        this.grade = grade;
-    };
+const UIController = ( () => {
+    
+    let getInput= () => {
 
-    Student.prototype.getInfo = function () {
-        return "Student : " + this.name + " " + this.surname + " " + this.grade;
-    };
+        const subject = document.querySelector(".add-subject");
+        const studentName = document.querySelector(".add-student-name");
+        const grade = document.querySelector(".add-grade");
 
-    function ExamResult(grade) {
+
+
+        return {
+            subject : subject.value,
+            studentName: studentName.value,
+            grade : grade.value
+        }
 
     }
+    
+    return {
+        getInput: getInput
+    }
+
+
+})();
+
+
+const MainController = ( () => {
+
+    const button = document.querySelector(".add-btn");
+    let init = button.addEventListener("click", () => {
+        
+
+    })
 
     return {
-        getInfo: getInfo,
-
+        init: init
     }
-
 })();
 
-
-
-
-var UIController = (function () {
-
-    function collectInput() {
-
-        var examSelect = document.getElementsByClassName('add-subject');
-        var nameSurnameSelect = document.getElementsByClassName('add-student-name')[0];
-        var gradeSelect = document.getElementsByClassName('add-grade')[0];
-
-        var result = {
-        exam: examSelect[examSelect.selectedIndex].value,
-        nameSurname:  nameSurnameSelect.value,
-        grade:  gradeSelect.value
-        }
-        return result;
-        
-    }
-
-
-
-
-
-
-})();
-
-
-var MainController = (function () {
-
-
-
-})();
+MainController.init();
