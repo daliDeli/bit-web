@@ -1,0 +1,32 @@
+#bitshow{
+    color: white;
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+}
+
+.placement {
+    text-align: center;
+
+} 
+
+.placement img {
+    margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+a {
+    display: block;
+    font-size: 1.5em;
+    color: black;
+
+}
+a:hover{
+    text-decoration:none;
+    color: rgb(61, 61, 99);
+}
+
+/*# sourceMappingURL=style.css.map */
