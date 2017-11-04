@@ -15,18 +15,30 @@ request.done(function(api){
     console.log(api);
     var seriesName = api.name;
     var seriesSummary = api.summary ;
-     var seriesCast;
+     
     for (var i = 0; i < 6; i++) {
         var element = api._embedded.cast[i].character.name;
-        // var ul = $("<ul>");
         var parag = $("<p>");
         var seriesCast = parag.text(element) ;
-        console.log(element);
-        $("#cast").append(seriesCast);
+
+        $("#cast").after(seriesCast);
         
     }
 
-    var seriesImage = $("<img>").attr("src", api.image.medium);
+    for (var i = 0; i < api._embedded.seasons.length; i++) {
+        var element = api._embedded.seasons[i].premiereDate;
+        var parag = $("<p>");
+        var seriesCast = parag.text(element);
+        console.log(element);
+
+        $("#season").after(seriesCast);
+    }
+    $("#season").append(api._embedded.seasons.length);
+
+    var seriesImage = $("<img>").attr({
+        src: api.image.medium,
+        id: "singleImage"
+    });
 
     $(".imageDiv").append(seriesImage);
     $(".paragDiv").append(seriesSummary);

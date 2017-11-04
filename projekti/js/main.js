@@ -1,7 +1,7 @@
 
 var request = $.ajax({
     url: "http://api.tvmaze.com/shows",
-    method: "GET",
+    method: "GET"
 
 })
 
@@ -33,21 +33,35 @@ request.done(function (api) {
 
 })
 
-//  inputaVal = $("input").val();
-
-// var requestSearch = $.ajax({
-//     url: "http://api.tvmaze.com/search/shows?",
-//     method: "GET",
-//     date:{
-//         q: inputVal
-//     }
-// })
-
 $(document).on("click", "a", function(){
     var currentID = $(this).attr("datashowid");
     localStorage.setItem("id", currentID);
 
 })
+
+
+$(document).on("keypress","input", function(){
+    var search = $("input").value;
+
+    var requestShow = $.ajax({
+        url: "http://api.tvmaze.com/search/shows?q="+ search,
+        method: "GET"
+    })
+
+    var ulShow = $("<ul>");
+
+    request.done(function (api) {
+        
+    
+    })
+
+
+} )
+    
+    
+
+
+
 
 
 
