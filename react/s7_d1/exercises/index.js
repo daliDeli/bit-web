@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "babel-polyfill";
 
-import Post from "./components/post";
+import App from "./components/app";
 
-ReactDOM.render(<Post />, document.getElementById("app"));
+
+
+ReactDOM.render(<App />, document.getElementById("app"));
+

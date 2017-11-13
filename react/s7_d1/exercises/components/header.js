@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 
 
 const Header = (props) => {
- 
+
     return (
-        <h1>BLOG</h1>
-        
+        <div>
+            <h1 style={{textAlign:"center"}}>BLOG</h1>
+        </div>
     );
 };
 
