@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link} from "react-router-dom";
+
+
 
 import DataService from "../services/DataService";
 import ShowCard from "./ShowCard";
@@ -33,8 +36,8 @@ export default class HomePage extends Component {
         this.getSeries();
     }
 
-    failedRequest() {
-
+    failedRequest(error) {
+        console.log(error)
     }
 
     render() {
@@ -42,8 +45,10 @@ export default class HomePage extends Component {
             <div className="row">
 
                 {this.state.series.map(series =>
-                    <ShowCard image={series.image} name={series.name} key={series.id} />)}
-
+                <Link to ={`/single:${series.id}`} >
+                    <ShowCard image={series.image} name={series.name} key={series.id} />
+                </Link>
+                )}
             </div>
         );
     }

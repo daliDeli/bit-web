@@ -1,1 +1,1 @@
-export const BASE_URL = "http://api.tvmaze.com/shows";
+export const BASE_URL = "http://api.tvmaze.com/";
