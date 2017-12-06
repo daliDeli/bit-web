@@ -3,7 +3,7 @@ import './App.css';
 import Search from "./components/Search"
 import FetchService from "./services/fetchService"
 import { SparklinesLine, SparklinesReferenceLine, Sparklines } from 'react-sparklines';
-import { GoogleMap, Marker } from "react-google-maps";
+import { MapWithAMarker } from "./services/GoogleMaps";
 
 
 class App extends Component {
@@ -14,8 +14,13 @@ class App extends Component {
       cities: [],
       cityWeather: {
         data: {
-          city: "Loading...",
-          list: []
+          city: {
+            name:"Loading...",
+            coord:{
+            }
+        },
+          list: [],
+
         }
       }
     }
@@ -44,12 +49,12 @@ class App extends Component {
     this.setState({
       cities: cityInfo,
       cityWeather
-
     })
   }
 
   failedRequest(error) {
     console.log(error);
+    // alert("Please enter a valid city name.");
   }
 
   componentDidMount() {
@@ -84,6 +89,13 @@ class App extends Component {
             <div className="row col s12" key={town.data.city.id}>
               <div className="row col s4">
                 {town.data.city.name}
+                <MapWithAMarker
+                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKVVnOLCMnQ1ctojD3QJMZlpS8oWHjP08&v=3.exp&libraries=geometry,drawing,places"
+                  loadingElement={<div style={{ height: `50%` }} />}
+                  containerElement={<div style={{ height: `400px` }} />}
+                  mapElement={<div style={{ height: `50%` }} />}
+                  coordinates={town.data.city.coord}
+                />
               </div>
               <div className="row col s4">
                 <Sparklines data={tempData} >
