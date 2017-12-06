@@ -3,6 +3,7 @@ import './App.css';
 import Search from "./components/Search"
 import FetchService from "./services/fetchService"
 import { SparklinesLine, SparklinesReferenceLine, Sparklines } from 'react-sparklines';
+import { GoogleMap, Marker } from "react-google-maps";
 
 
 class App extends Component {
@@ -73,28 +74,32 @@ class App extends Component {
     });
 
     return (
-      <div className="App">
-        <Search onSearchRequest={this.getWeatherData} />
-        <div >
-          {this.state.cities.map(town => {
-            return (
-              <div>
-                {this.town.data.city.name}
-
+      <div className="App container">
+        <div className="row col s12">
+          <Search onSearchRequest={this.getWeatherData} />
+        </div >
+        {this.state.cities.map(town => {
+          return (
+            <div className="row col s12">
+              <div className="row col s4">
+                {town.data.city.name}
+              </div>
+              <div className="row col s4">
                 <Sparklines data={tempData} >
                   <SparklinesLine />
                   <SparklinesReferenceLine type="mean" />
                 </Sparklines>
-
+              </div>
+              <div className="row col s4">
                 <Sparklines data={humidityData} >
                   <SparklinesLine />
                   <SparklinesReferenceLine type="mean" />
                 </Sparklines>
 
               </div>
-            )
-          })}
-        </div>
+            </div>
+          )
+        })}
 
 
       </div >

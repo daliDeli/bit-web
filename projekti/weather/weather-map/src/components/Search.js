@@ -33,9 +33,9 @@ export default class Search extends React.Component {
 
     render(){
         return(
-            <div >
+            <div className="container ">
                 <input type="text" value={this.state.searchString} onChange={this.searchedStringHandler}/>
-                <button type="submit" onClick={this.renderWeatherData}>Search</button>
+                <button className="grey waves-light btn" type="submit" onClick={this.renderWeatherData}>Search</button>
             </div>
         )
     }
