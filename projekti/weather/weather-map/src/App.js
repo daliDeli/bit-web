@@ -43,7 +43,7 @@ class App extends Component {
   successfulRequest(cityWeather) {
 
     this.setState({
-      cities: [...this.state.cities, cityWeather],
+      cities: [cityWeather, ...this.state.cities],
 
     }, )
   }
