@@ -14,7 +14,7 @@ class App extends Component {
       cities: [],
       cityWeather: {
         data: {
-          city: "Bijeljina",
+          city: "Loading...",
           list: []
         }
       }
@@ -37,6 +37,7 @@ class App extends Component {
   }
 
   successfulRequest(cityWeather) {
+    console.log(cityWeather.data.city.id);
     const cityInfo = [];
     cityInfo.push(cityWeather);
 
@@ -80,7 +81,7 @@ class App extends Component {
         </div >
         {this.state.cities.map(town => {
           return (
-            <div className="row col s12">
+            <div className="row col s12" key={town.data.city.id}>
               <div className="row col s4">
                 {town.data.city.name}
               </div>
