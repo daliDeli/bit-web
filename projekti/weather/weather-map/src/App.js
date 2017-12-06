@@ -15,10 +15,9 @@ class App extends Component {
       cityWeather: {
         data: {
           city: {
-            name:"Loading...",
-            coord:{
-            }
-        },
+            name: "Loading...",
+
+          },
           list: [],
 
         }
@@ -42,14 +41,11 @@ class App extends Component {
   }
 
   successfulRequest(cityWeather) {
-    console.log(cityWeather.data.city.id);
-    const cityInfo = [];
-    cityInfo.push(cityWeather);
 
     this.setState({
-      cities: cityInfo,
-      cityWeather
-    })
+      cities: [...this.state.cities, cityWeather],
+
+    }, )
   }
 
   failedRequest(error) {
@@ -65,19 +61,6 @@ class App extends Component {
   render() {
 
 
-    if (this.state.cityWeather.data == null) {
-      return <p>Loading</p>;
-    }
-    if (this.state.cities == null) {
-      return <p>Loading</p>;
-    }
-
-    const tempData = this.state.cityWeather.data.list.map(hour => {
-      return hour.main.temp;
-    });
-    const humidityData = this.state.cityWeather.data.list.map(hour => {
-      return hour.main.humidity;
-    });
 
     return (
       <div className="App container">
@@ -85,10 +68,18 @@ class App extends Component {
           <Search onSearchRequest={this.getWeatherData} />
         </div >
         {this.state.cities.map(town => {
+
+          const tempData = town.data.list.map(hour => {
+            return hour.main.temp;
+          });
+          const humidityData = town.data.list.map(hour => {
+            return hour.main.humidity;
+          });
+
           return (
             <div className="row col s12" key={town.data.city.id}>
               <div className="row col s4">
-                {town.data.city.name}
+                <h5>{town.data.city.name}</h5>
                 <MapWithAMarker
                   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKVVnOLCMnQ1ctojD3QJMZlpS8oWHjP08&v=3.exp&libraries=geometry,drawing,places"
                   loadingElement={<div style={{ height: `50%` }} />}
