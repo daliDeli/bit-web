@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "create-react-app": "^1.4.3",
     "open": "0.0.5",
     "react-bootstrap": "^0.31.5",
     "react-sparklines": "^1.7.0"
