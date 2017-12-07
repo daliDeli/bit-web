@@ -71,8 +71,8 @@ export default class MyFancyComponent extends React.PureComponent {
                     lng: 12.457777
                 })}><i className="material-icons">San </i></a>
                 <a className="btn btn-floating pulse white right" onClick={() => this.changeCapital({
-                    lat: Math.random() * 40,
-                    lng: Math.random() * 40
+                    lat: Math.random() * 60,
+                    lng: Math.random() * 100
                 })}><i className="material-icons"></i></a>
                 
                 
