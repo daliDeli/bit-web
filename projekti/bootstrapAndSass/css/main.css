@@ -1,0 +1,73 @@
+.background-green {
+  background: #04996c;
+  text-align: center;
+  padding-bottom: 20px;
+  color: white; }
+  .background-green #profile {
+    padding: 20px 0 20px 0; }
+  .background-green hr.style-two {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(17, 16, 16, 0), rgba(230, 228, 228, 0.75), rgba(0, 0, 0, 0)); }
+
+h2 {
+  color: black;
+  text-align: center;
+  padding: 30px 0 10px 0; }
+
+hr.style-three {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(17, 16, 16, 0), rgba(19, 19, 19, 0.75), rgba(0, 0, 0, 0)); }
+
+.row img {
+  height: 100%;
+  padding-bottom: 25px; }
+
+.navigation {
+  color: white;
+  background-color: #121431;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+  .navigation .navbar-brand {
+    color: white; }
+  .navigation .navbar-light .navbar-toggler {
+    background-color: #04996c;
+    font-size: 100%;
+    color: white; }
+  .navigation .navbar-light .navbar-nav .nav-link {
+    color: white; }
+  .navigation a .nav-link {
+    float: right; }
+
+.container form {
+  padding-bottom: 40px; }
+  .container form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px; }
+  .container form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 30px; }
+  .container form button {
+    color: #fff;
+    border-color: #04996c;
+    background: #04996c; }
+
+.container-fluid h2 {
+  color: white; }
+.container-fluid button {
+  color: #fff;
+  border-color: #fff; }
+.container-fluid button:hover {
+  color: #04996c;
+  background-color: white;
+  border-color: white; }
+
+footer {
+  background-color: #242222;
+  color: white; }
+
+/*# sourceMappingURL=main.css.map */
