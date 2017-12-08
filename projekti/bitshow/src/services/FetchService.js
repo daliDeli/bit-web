@@ -18,7 +18,7 @@ export default class FetchService {
     }
     getOne(id,successHandler, errorHandler) {
         axios({
-            url: `${BASE_URL}search/shows?q=${id}`,
+            url: `${BASE_URL}shows/${id}`,
             method: "get",
             headers: {
                 "Content-Type": "application/json"

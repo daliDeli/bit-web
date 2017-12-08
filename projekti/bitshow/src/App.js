@@ -14,7 +14,7 @@ class App extends Component {
       <Header />
       <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route path="/single:id" component={SinglePage}/>
+          <Route path="/single/:id" component={SinglePage}/>
       </Switch>
       <Footer />
   </div>

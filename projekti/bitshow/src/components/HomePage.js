@@ -45,7 +45,7 @@ export default class HomePage extends Component {
             <div className="row">
 
                 {this.state.series.map(series =>
-                <Link to ={`/single:${series.id}`} >
+                <Link to ={`/single/${series.id}`} className="col-sm-12 col-md-4 text-center text-muted" key={series.id}>
                     <ShowCard image={series.image} name={series.name} key={series.id} />
                 </Link>
                 )}
