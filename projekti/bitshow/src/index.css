@@ -3,3 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.cover-image{
+  /* height:40%;  */
+}
+footer{
+  min-height: 100%;
+}
+#accordion{
+  /* width: 64%; */
+}
+a:hover{
+  text-decoration: none;
+}

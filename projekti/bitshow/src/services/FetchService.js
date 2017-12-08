@@ -19,10 +19,14 @@ export default class FetchService {
     getOne(id,successHandler, errorHandler) {
         axios({
             url: `${BASE_URL}shows/${id}`,
-            method: "get",
+            method: "GET",
             headers: {
                 "Content-Type": "application/json"
+            },
+            params: {
+                embed: ['seasons', 'cast']
             }
+            
         })
             .then(response => successHandler(response))
             .catch(error => errorHandler(error));

@@ -5,12 +5,12 @@ import Header from "./common/Header";
 import Footer from "./common/Footer";
 import SinglePage from "./components/SinglePage";
 import HomePage from "./components/HomePage";
-import './App.css';
+
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div >
       <Header />
       <Switch>
           <Route exact path="/" component={HomePage}/>
