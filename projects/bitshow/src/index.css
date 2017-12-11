@@ -6,12 +6,22 @@ body {
 .cover-image{
   /* height:40%;  */
 }
-footer{
+/* footer{
   min-height: 100%;
-}
+} */
 #accordion{
   /* width: 64%; */
 }
 a:hover{
   text-decoration: none;
+}
+footer {
+  color: white;
+  min-height: 100%;  
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  background:rgb(0, 0, 0);
+  margin-bottom: 0px;
 }

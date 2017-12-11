@@ -11,8 +11,9 @@ export default class SinglePage extends Component {
                     id: 22,
                     image: {},
                     summary: "",
-                    _embedded:{
-                        seasons:""
+                    _embedded: {
+                        seasons: [],
+                        cast: []
                     }
                 }
             }
@@ -73,13 +74,17 @@ export default class SinglePage extends Component {
                         <div className="card-header" role="tab" id="headingTwo">
                             <h5 className="mb-0">
                                 <a className="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    SEASONS
+                                    SEASONS({this.state.series.data._embedded.seasons.length})
                                 </a>
                             </h5>
                         </div>
                         <div id="collapseTwo" className="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div className="card-body">
-                            {/* {this.state.series.data._embedded.seasons.map(season => <h5>{season.id}</h5>)} */}
+                                {this.state.series.data._embedded.seasons.map((season, i) =>
+                                    <div key={season.id}>
+                                        <h5 >Season {i + 1}</h5><p> {season.premiereDate}</p>
+                                        <hr />
+                                    </div>)}
                             </div>
                         </div>
                     </div>
@@ -93,7 +98,20 @@ export default class SinglePage extends Component {
                         </div>
                         <div id="collapseThree" className="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
                             <div className="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                {this.state.series.data._embedded.cast.map((actor, i) => {
+                                    if (i < 8) {
+                                        
+                                        return (<div className="row" key={actor.person.id}>
+                                            <div className="col-6 col-md-4">
+                                                <img src={actor.person.image.medium} alt="Actor/actress " />
+                                            </div>
+                                            <div className="col-6 col-md-4 text-center">
+                                                <h5>{actor.person.name} </h5>
+                                            </div>
+                                        </div>)
+                                    }
+                                }
+                                )}
                             </div>
                         </div>
                     </div>

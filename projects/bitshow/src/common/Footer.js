@@ -4,7 +4,7 @@ export default class Footer extends Component{
     
         render(){
             return(
-                <footer>
+                <footer className="text-center ">
                 <p>Copyright © 2017 BIT</p>
               </footer>
             );
