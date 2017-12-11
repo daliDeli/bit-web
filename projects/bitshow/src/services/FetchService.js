@@ -1,7 +1,6 @@
 import axios from "axios";
 
-import {BASE_URL} from "../constants";
-// "http://api.tvmaze.com/search/shows?q=
+import { BASE_URL } from "../constants";
 
 export default class FetchService {
 
@@ -16,7 +15,8 @@ export default class FetchService {
             .then(response => successHandler(response))
             .catch(error => errorHandler(error));
     }
-    getOne(id,successHandler, errorHandler) {
+
+    getOne(id, successHandler, errorHandler) {
         axios({
             url: `${BASE_URL}shows/${id}`,
             method: "GET",
@@ -26,7 +26,19 @@ export default class FetchService {
             params: {
                 embed: ['seasons', 'cast']
             }
-            
+
+        })
+            .then(response => successHandler(response))
+            .catch(error => errorHandler(error));
+    }
+    // "http://api.tvmaze.com/search/shows?q=
+    getByName(seriesName, successHandler, errorHandler) {
+        axios({
+            url: `${BASE_URL}/search/shows?q=${seriesName}`,
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
         })
             .then(response => successHandler(response))
             .catch(error => errorHandler(error));
