@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import YTSearch from 'youtube-api-search';
-import { API_KEY } from "./constants";
-import Video from "./entities/Video";
+import { API_KEY } from "../constants";
+import VideoDTO from "./entities/videoDTO";
 
-class App extends Component {
+class MainPage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             searchTerm: "",
             newVideos: [],
-            previousVideo: {}
+            previousVideo: {},
+            previousVideoDisplay: "none"
         }
 
     }
@@ -25,6 +26,8 @@ class App extends Component {
 
         YTSearch(options, (videos) => {
 
+            console.log(videos);
+
             const newVideos = [];
 
             videos.map((video) => {
@@ -32,7 +35,7 @@ class App extends Component {
                 const channelTitle = video.snippet.channelTitle;
                 const title = video.snippet.title;
                 const imageUrl = video.snippet.thumbnails.high.url;
-                const newVideo = new Video(id, channelTitle, title, imageUrl);
+                const newVideo = new VideoDTO(id, channelTitle, title, imageUrl);
                 newVideos.push(newVideo);
             });
             this.setState({
@@ -72,28 +75,34 @@ class App extends Component {
         }
         this.loadData(event.target.title);
         this.setState({
-            previousVideo: this.state.newVideos[0]
+            previousVideo: this.state.newVideos[0],
+            previousVideoDisplay: ""
         });
     }
 
     processVideoUrl = (video) => {
         return (
             <div>
-                <iframe width="90%" height="615" src={`https://www.youtube.com/embed/${video.id}`} frameBorder="0" allowFullScreen></iframe>
-                <p title={video.title}>{video.title}</p>
-                <p title={video.title}>{video.channelTitle}</p>
+                <iframe width="90%" height="615" src={`https://www.youtube.com/embed/${video.id}`} frameBorder="0" allowFullScreen title={video.title}></iframe>
+                <h5 title={video.title} className="col-12">{video.title}</h5>
             </div>
         );
     }
 
     processVideoThumbnail = (video) => {
         return (
-            <div key={video.id} title={video.title}>
-                <img src={video.imageUrl} style={{ width: "200px" }} title={video.title} />
+            <div key={video.id} title={video.title} className="col-12" style={{ textAlign: "left" }}>
+                <img src={video.imageUrl} style={{ width: "200px" }} title={video.title} alt={video.title} />
                 <p title={video.title}>{video.title}</p>
-                <p title={video.title}>{video.channelTitle}</p>
+                <p title={video.title}>Recommended for you</p>
             </div>
         );
+    }
+
+
+
+    logoClickHandler = () => {
+        this.loadData("");
     }
 
     render() {
@@ -107,28 +116,29 @@ class App extends Component {
         return (
             <div>
                 <div>
-                    <div className="row">
-                        <div className="col-12">
-                            <form className="form-inline">
-                                <input className="form-control" style={{ width: "90%" }} onChange={this.handleInputChange} value={this.state.searchTerm} type="text" placeholder="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.dispatchSearch}>Search</button>
-                            </form>
-                        </div>
-                    </div>
+
+
+                    <nav className="navbar navbar-dark bg-dark justify-content-between">
+                        <a className="navbar-brand" onClick={this.logoClickHandler} style={{ color: "white" }}>YTSearch</a>
+                        <form className="form-inline">
+                            <input className="form-control mr-sm-2" onChange={this.handleInputChange} value={this.state.searchTerm} type="text" placeholder="Search" />
+                            <button className="btn btn-info my-2 my-sm-0" onClick={this.dispatchSearch}>Search</button>
+                        </form>
+                    </nav>
 
                     <div className="row">
-                        <div className="col-9">
+                        <div className="col-7 offset-1 mainVideoContainer">
                             {this.processVideoUrl(this.state.newVideos[0])}
-                            <div>
-                                <h1>Prevous video</h1>
+                        </div>
+
+
+                        <div className="col-3 offset-1">
+                            <div onClick={this.handleClick} className="previousVideoContainer" style={{ display: this.state.previousVideoDisplay }}>
+                                <h1>Previous video</h1>
                                 {this.processVideoThumbnail(this.state.previousVideo)}
                             </div>
-                        </div>
-
-
-                        <div className="col-3">
-
-                            <div onClick={this.handleClick}>
+                            <div onClick={this.handleClick} className="sideVideosContainer">
+                                <h1>Recommended videos</h1>
                                 {this.state.newVideos.slice(1).map((video) => {
                                     return this.processVideoThumbnail(video);
                                 })}
@@ -142,4 +152,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default MainPage;

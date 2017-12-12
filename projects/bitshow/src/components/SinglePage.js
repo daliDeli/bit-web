@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import DataService from "../services/DataService";
 
+import "./SinglePage.css";
+
 export default class SinglePage extends Component {
     constructor(props) {
         super(props);
@@ -59,11 +61,13 @@ export default class SinglePage extends Component {
         }
         return (
             <div className="container text-center">
-                <div>
-                    <h2 className="text-muted">
+                <div className="row">
+                    <h2 className="text-muted col-12">
                         {this.state.series.data.name}
                     </h2>
-                    <img className="cover-image" src={this.state.series.data.image.original} alt="Show cover" />
+                    <div className="col-12"> 
+                    <img id="single-page-image" className="cover-image" src={this.state.series.data.image.original} alt="Show cover" />
+                    </div>
                 </div>
 
                 <div id="accordion" className=" text-center container text-muted" role="tablist">
@@ -78,7 +82,7 @@ export default class SinglePage extends Component {
 
                         <div id="collapseOne" className="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                             <div className="card-body ">
-                                {this.state.series.data.summary.replace(/(<([^>]+)>)/ig, "")}
+                                {this.state.series.data.summary.replace(/<\/?[^>]+(>|$)/g, "")}
                             </div>
                         </div>
                     </div>

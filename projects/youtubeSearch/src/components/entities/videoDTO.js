@@ -1,4 +1,4 @@
-export default class Video{
+class VideoDTO {
     constructor(id, channelTitle, title, imageUrl) {
         this._id = id;
         this._channelTitle = channelTitle;
@@ -20,4 +20,7 @@ export default class Video{
     get imageUrl() {
         return this._imageUrl;
     }
+
 }
+
+export default VideoDTO;
