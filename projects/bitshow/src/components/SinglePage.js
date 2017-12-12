@@ -6,29 +6,33 @@ export default class SinglePage extends Component {
         super(props);
 
         this.state = {
-            series: {
-                data: {
-                    id: 22,
-                    image: {},
-                    summary: "",
-                    _embedded: {
-                        seasons: [],
-                        cast: []
-                    }
-                }
-            }
+            series: null
 
         }
         this.dataService = new DataService();
 
+        this.bindHandlers();
+    }
+    bindHandlers(){
         this.fetchOneSeries = this.fetchOneSeries.bind(this);
         this.successHandler = this.successHandler.bind(this);
+        this.fetchSeriesThatIsSearched = this.fetchSeriesThatIsSearched.bind(this);
+        
     }
 
     fetchOneSeries() {
-        console.log(this.props.match.params);
         const seriesId = this.props.match.params.id;
         this.dataService.getOneSeries(seriesId, this.successHandler, this.errorHandler);
+        
+    }
+
+    fetchSeriesThatIsSearched(seriesId) {
+        this.dataService.getOneSeries(seriesId, this.successHandler, this.errorHandler);
+
+    }
+
+    errorHandler(error){
+        console.warn(error);
     }
 
     successHandler(series) {
@@ -38,13 +42,21 @@ export default class SinglePage extends Component {
         })
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.fetchSeriesThatIsSearched(nextProps.match.params.id);
+    }
+
     componentDidMount() {
         this.fetchOneSeries();
     }
 
     render() {
 
-
+        if(this.state.series === null){
+            return (
+                <p>Loading...</p>
+            )
+        }
         return (
             <div className="container text-center">
                 <div>
@@ -66,7 +78,7 @@ export default class SinglePage extends Component {
 
                         <div id="collapseOne" className="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                             <div className="card-body ">
-                                {this.state.series.data.summary.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "")}
+                                {this.state.series.data.summary.replace(/(<([^>]+)>)/ig, "")}
                             </div>
                         </div>
                     </div>
