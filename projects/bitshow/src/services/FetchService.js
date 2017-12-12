@@ -31,7 +31,7 @@ export default class FetchService {
             .then(response => successHandler(response))
             .catch(error => errorHandler(error));
     }
-    // "http://api.tvmaze.com/search/shows?q=
+    
     getByName(seriesName, successHandler, errorHandler) {
         axios({
             url: `${BASE_URL}/search/shows?q=${seriesName}`,

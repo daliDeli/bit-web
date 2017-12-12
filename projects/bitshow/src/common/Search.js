@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
 
 import DataService from "../services/DataService";
 
@@ -9,12 +8,7 @@ export default class Search extends Component{
 
         this.state={
             searchString:"",
-            seriesData: {
-                data:[{
-                    show:{}
-                }]
-            },
-            // visibility: false
+            
         }
         this.dataService = new DataService();
 
@@ -31,12 +25,13 @@ export default class Search extends Component{
         })
 
         this.dataService.getSeriesByName(searchString, this.successHandler, this.errorHandler);
+
+        this.props.passingSearchedString(this.state.searchString);
     }
 
-    successHandler(seriesData){
-        this.setState({
-            seriesData
-        })
+    successHandler(seriesData){   
+            this.props.passingSeriesData(seriesData);
+
     }
     
     errorHandler(error){
@@ -45,18 +40,8 @@ export default class Search extends Component{
 
     render(){
         return(
-            <form className="form-inline">
-                <input className="form-control mr-sm-2 " onChange={this.searchedString} value={this.state.searchString} type="search" placeholder="Search" aria-label="Search"/>
-                 {/* <button className="btn btn-outline-muted my-2 my-sm-0" type="submit" onClick={this.searchedString}>Search</button>  */}
-                 <ul className="list-group">
-                    {this.state.seriesData.data.map(series => 
-                    <li className="list-group-item" key={series.show.id}>
-                    {console.log(series)}
-                        <Link  to={`/single/${series.show.id}`}> {series.show.name} </Link>
-                    </li>)}
-                 </ul>
-            </form>
+            
+            <input className="form-control mr-sm-2 " onChange={this.searchedString} value={this.state.searchString} type="search" placeholder="Search" aria-label="Search"/>
         )
     }
-
 }
