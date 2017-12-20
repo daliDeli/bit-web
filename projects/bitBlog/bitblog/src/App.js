@@ -5,7 +5,9 @@ import { Route, Switch } from "react-router-dom";
 import Footer from "./common/Footer";
 import Header from "./common/Header";
 import MainPage from "./components/MainPage";
+import Authors from "./components/Authors";
 import SinglePostPage from "./components/SinglePostPage";
+import SingleAuthorsPage from "./components/singleAuthorsPage/SingleAuthorsPage";
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
        <Switch>
          <Route exact path="/" component={MainPage}/>
          <Route path="/posts/:id" component={SinglePostPage}/>
+         <Route exact path="/authors" component={Authors}/>
+         <Route path="/authors/:id" component={SingleAuthorsPage}/>
        </Switch>
        <Footer/>
       </div>

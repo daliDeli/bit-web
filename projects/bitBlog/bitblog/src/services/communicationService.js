@@ -38,6 +38,18 @@ import {BASE_URL} from "../constants";
           failedResponse(error);
         });
 }
+
+    getSingleAuthor(authorId,successfulResponse,failedResponse){
+        axios.get(`${BASE_URL}/users/${authorId}`)
+        .then(response => {
+          console.log(response);
+          successfulResponse(response);
+        })
+        .catch(error => {
+          console.log(error);
+          failedResponse(error);
+        });
+}
 }
 
 export const communicationService = new CommunicationService();
