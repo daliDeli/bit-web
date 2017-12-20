@@ -17,7 +17,7 @@ export default class Header extends Component {
 
         this.passingSeriesData = this.passingSeriesData.bind(this);
         this.searchVisibilityOnOff = this.searchVisibilityOnOff.bind(this);
-        this.toogleStateDisplay = this.toogleStateDisplay.bind(this);
+        this.toggleStateDisplay = this.toggleStateDisplay.bind(this);
     }
 
     passingSeriesData(seriesData) {
@@ -34,7 +34,7 @@ export default class Header extends Component {
         }
     }
 
-    toogleStateDisplay(){
+    toggleStateDisplay(){
         this.setState({
             display:"none"
         })
@@ -57,8 +57,7 @@ export default class Header extends Component {
                 </nav>
                 <ul className="list-group container-fluid" style={{ display: this.state.display, position: "absolute", top: 67 , zIndex: 2}}>
                     {this.state.seriesData.data.map(series =>
-                        <li className="list-group-item " key={series.show.id} onClick={this.toogleStateDisplay}>
-                            {console.log(series)}
+                        <li className="list-group-item " key={series.show.id} onClick={this.toggleStateDisplay}>
                             <Link to={`/single/${series.show.id}`}> {series.show.name} </Link>
                         </li>)}
                 </ul>

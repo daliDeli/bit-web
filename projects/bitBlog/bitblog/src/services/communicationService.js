@@ -6,7 +6,7 @@ import {BASE_URL} from "../constants";
     getBlogPosts(successfulResponse,failedResponse){
         axios.get(`${BASE_URL}/posts`)
         .then(response => {
-          console.log("allPosts",response);
+         
           successfulResponse(response);
         })
         .catch(error => {
@@ -18,7 +18,7 @@ import {BASE_URL} from "../constants";
     getAuthorsData(successfulResponse,failedResponse){
         axios.get(`${BASE_URL}/users`)
         .then(response => {
-          console.log("authorsData",response);
+          
           successfulResponse(response);
         })
         .catch(error => {
