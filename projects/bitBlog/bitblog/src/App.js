@@ -8,6 +8,7 @@ import MainPage from "./components/MainPage";
 import Authors from "./components/Authors";
 import SinglePostPage from "./components/SinglePostPage";
 import SingleAuthorsPage from "./components/singleAuthorsPage/SingleAuthorsPage";
+import About from "./components/About";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
          <Route path="/posts/:id" component={SinglePostPage}/>
          <Route exact path="/authors" component={Authors}/>
          <Route path="/authors/:id" component={SingleAuthorsPage}/>
+         <Route path="/about" component={About}/>
        </Switch>
        <Footer/>
       </div>

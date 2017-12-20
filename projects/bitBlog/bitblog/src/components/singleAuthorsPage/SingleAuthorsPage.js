@@ -30,7 +30,7 @@ export default class SingleAuthorsPage extends Component {
 
     componentDidMount() {
         this.fetchSingleAuthorData();
-        console.log("ovo je za autora", this.state.author);
+        
     }
 
     render() {
