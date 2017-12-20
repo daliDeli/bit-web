@@ -5,16 +5,12 @@ var request = $.ajax({
 
 })
 
-
-
-
-request.done(function (api) {
-    
+request.done(function (response) {
     
     for (var i = 0; i <= 50; i++) {
-        var seriesName = api[i].name;
-        var seriesImage = api[i].image.medium;
-        var seriesId = api[i].id;
+        var seriesName = response[i].name;
+        var seriesImage = response[i].image.medium;
+        var seriesId = response[i].id;
         
         var createDiv = $("<div>").attr("class", "col-12 col-md-6 col-lg-4 placement");
         var createImage = $("<img>").attr("src", seriesImage);
@@ -24,7 +20,7 @@ request.done(function (api) {
             target: "_blank"
         }).text(seriesName);
         
-        // console.log(api[i].id);
+        // console.log(response[i].id);
         $(".row").append(createDiv);
         $(createDiv).append(createImage);
         $(createDiv).append(createAnchor);
@@ -39,23 +35,28 @@ $(document).on("click", "a", function(){
 
 })
 
-
-$(document).on("keypress","input", function(){
-    var search = $("input").value;
+// Search shows by name
+$(document).on("keyup", "input", function(event){
+    console.log(this)
+    console.log($(this))
+    var search = $(this).val();
+    console.log(`ukucano je ${search}`);
+    console.log(`sta je ${event.target.value}`)
 
     var requestShow = $.ajax({
         url: "http://api.tvmaze.com/search/shows?q="+ search,
         method: "GET"
     })
 
-    var ulShow = $("<ul>");
-
-    request.done(function (api) {
-        
     
+    requestShow.done(function (response) {
+        console.log("this is a fetch",response);
+        var ulShow = $("<ul>");
+        
+        for(var i = 0; i < response.length; i++){
+            var liShow =  $("<li>");
+        }
     })
-
-
 } )
     
     
