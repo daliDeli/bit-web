@@ -48,7 +48,7 @@ export default class SingleAuthorsPage extends Component {
 
                 <NameSurname nameSurnameData={nameSurnameData} />
                 <hr />
-                <Address address={this.state.author.adress} />
+                <Address address={this.state.author.address} />
                 <hr />
                 <Company company={this.state.author.company} />
                 <hr />
