@@ -17,7 +17,8 @@ request.done(function (response) {
         var createAnchor = $("<a>").attr({
             href: 'single.html',
             datashowid: seriesId,
-            target: "_blank"
+            target: "_blank",
+            class: "seriesName"
         }).text(seriesName);
         
         // console.log(response[i].id);
@@ -29,7 +30,7 @@ request.done(function (response) {
 
 })
 
-// $(document).on("click", "a", function(){
+// $(document).on("click", ".seriesName", function(){
 //     var currentID = $(this).attr("datashowid");
 //     localStorage.setItem("id", currentID);
 
@@ -60,7 +61,7 @@ $(document).on("keyup", "input", function(event){
             console.log(element.id);
             var createLi =  $("<li>");
             var createAnchor = $("<a>");
-            createAnchor.attr({"class": "sendOnClick", "href": "single.html","datashowid":Number(element.id)});
+            createAnchor.attr({"class": "sendOnClick", "href": "#","datashowid":element.id});
             
 
             createLi.append(element.name);
@@ -69,9 +70,12 @@ $(document).on("keyup", "input", function(event){
         }
 
         
-        $(".sendOnClick").click(()=>{ 
+        $(document).on('click', '.sendOnClick', (event) =>{
+            event.preventDefault(); 
             var searchId = $(".sendOnClick").attr("datashowid");
+            console.log(searchId);
             localStorage.setItem("id", searchId);
+            location.assign("single.html")
         })
         $(".navbar").append(createUl);
     })
