@@ -10,29 +10,31 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div>
-                <h1>
-                    RND BLOG
+            <header className="container-fluid">
+                <h1 className="text-center">
+                     BLOG
                 </h1>
-                <nav>
-                    <ul>
-                        <Link to="/">
-                            <li> Home</li>
+                <nav className="nav">
+                    <ul className="nav mx-auto ">
+                    <div className="row">
+                        <Link to="/" class="nav-link">
+                            <li className="nav-item"> Home</li>
                         </Link>
-                        <Link to="/authors">
-                            <li> Authors</li>
+                        <Link to="/authors" class="nav-link">
+                            <li className="nav-item"> Authors</li>
                         </Link>
-                        <Link to="/about">
-                            <li>About</li>
+                        <Link to="/about" class="nav-link">
+                            <li className="nav-item">About</li>
                         </Link>
+                    </div>
                     </ul>
-                    <div>
-                        <button type="submit" onClick={this.goBack}>
+                    <div className="row col-12">
+                        <button className="btn btn-primary" type="submit" onClick={this.goBack}>
                         Back    
                         </button>
                     </div>
                 </nav>
-            </div>
+            </header>
         )
     }
 }

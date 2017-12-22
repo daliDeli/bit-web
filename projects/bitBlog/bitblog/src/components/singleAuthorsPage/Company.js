@@ -6,7 +6,7 @@ export default class Company extends Component {
         if (this.props.company === undefined) {
             return "Loading"
         }
-        {console.log(this.props)}
+        console.log(this.props)
         return(
             <div>
                 <h3>Company Name:{this.props.company.name}</h3>
