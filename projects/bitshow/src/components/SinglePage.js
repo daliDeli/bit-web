@@ -62,7 +62,7 @@ export default class SinglePage extends Component {
         return (
             <div className="container text-center">
                 <div className="row">
-                    <h2 className="text-muted col-12">
+                    <h2 className="text-white col-12">
                         {this.state.series.data.name}
                     </h2>
                     <div className="col-12"> 

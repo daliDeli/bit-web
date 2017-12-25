@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
+import "./Header.css";
 import Search from "./Search";
 
 export default class Header extends Component {
@@ -26,42 +28,42 @@ export default class Header extends Component {
         })
     }
 
-    searchVisibilityOnOff(searchedString){
-        if(searchedString){
+    searchVisibilityOnOff(searchedString) {
+        if (searchedString) {
             this.setState({
-                display:"block"
+                display: "block"
             })
         }
     }
 
-    toggleStateDisplay(){
+    toggleStateDisplay() {
         this.setState({
-            display:"none"
+            display: "none"
         })
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.searchVisibilityOnOff();
     }
 
     render() {
         return (
-            <div>
-                <nav className="row navbar navbar-dark bg-dark justify-content-between">
-                    <Link to="/" className="navbar-brand col-3" id="bitshow"><h3>BitShow</h3></Link>
+            <header>
+                <nav className="row navbar navbar-dark justify-content-between">
+                    <Link to="/" className="navbar-brand col-3" id="bitshow"><h2>BitShow</h2></Link>
 
                     <form className="form-inline">
-                        <Search passingSeriesData={this.passingSeriesData} passingSearchedString={this.searchVisibilityOnOff}/>
+                        <Search passingSeriesData={this.passingSeriesData} passingSearchedString={this.searchVisibilityOnOff} />
 
                     </form>
                 </nav>
-                <ul className="list-group container-fluid" style={{ display: this.state.display, position: "absolute", top: 67 , zIndex: 2}}>
+                <ul className="list-group container-fluid" style={{ display: this.state.display, position: "absolute", top: 67, zIndex: 2 }}>
                     {this.state.seriesData.data.map(series =>
                         <li className="list-group-item " key={series.show.id} onClick={this.toggleStateDisplay}>
                             <Link to={`/single/${series.show.id}`}> {series.show.name} </Link>
                         </li>)}
                 </ul>
-                </div>
-                    );
+            </header>
+        );
     }
 }

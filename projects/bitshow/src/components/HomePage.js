@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import DataService from "../services/DataService";
 import ShowCard from "./ShowCard";
@@ -40,14 +40,18 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <div className="row">
+            <main>
+                <div className="container-fluid">
+                    <div className="row">
 
-                {this.state.series.map(series =>
-                <Link to ={`/single/${series.id}`} className="col-12 col-md-6 col-lg-4 text-center text-muted" key={series.id}>
-                    <ShowCard image={series.image} name={series.name} key={series.id} />
-                </Link>
-                )}
-            </div>
+                        {this.state.series.map(series =>
+                            <Link to={`/single/${series.id}`} className="col-12 col-md-6 col-lg-4 text-center" key={series.id}>
+                                <ShowCard image={series.image} name={series.name} key={series.id} />
+                            </Link>
+                        )}
+                    </div>
+                </div>
+            </main>
         );
     }
 }

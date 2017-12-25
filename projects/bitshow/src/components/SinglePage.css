@@ -2,3 +2,10 @@
     width: 40%;
     height: 100%;
 }
+
+.card{
+    width: 20rem;
+}
+/* .card-body{
+    background: transparent;
+} */
