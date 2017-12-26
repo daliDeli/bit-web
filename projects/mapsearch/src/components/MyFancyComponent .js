@@ -1,6 +1,8 @@
 import React from "react";
 import { MyMapComponent } from "./MyMapComponent ";
 
+import "./MyFancyComponent.css";
+
 export default class MyFancyComponent extends React.PureComponent {
     state = {
         isMarkerShown: false,
@@ -34,48 +36,70 @@ export default class MyFancyComponent extends React.PureComponent {
     }
     render() {
         return (
-            <div className="container blue lighten-5">
-            <h1>
-                World Map
+            <div className="container-fluid align-items">
+                <h1>
+                    World Map
             </h1>
                 <MyMapComponent
                     isMarkerShown={this.state.isMarkerShown}
                     onMarkerClick={this.handleMarkerClick}
                     coordinates={this.state.coordinates}
                 />
-                <h4>
-                    Choose a country and we will show you the capital of that country
+                <div className="row">
+                    <h4 className="col s12 ">
+                        Choose a country and we will show you its capital
                 </h4>
-                <a className="btn btn-floating pulse red" onClick={() => this.changeCapital({
-                    lat: 48.856614,
-                    lng: 2.352222
-                })}><i className="material-icons">Fra</i></a>
-                <a className="btn btn-floating pulse yellow" onClick={() => this.changeCapital({
-                    lat: 59.329323,
-                    lng: 18.068581
-                })}><i className="material-icons">Swe</i></a>
-                <a className="btn btn-floating pulse blue" onClick={() => this.changeCapital({
-                    lat: -25.263740,
-                    lng: -57.575926
-                })}><i className="material-icons">Par</i></a>
-                <a className="btn btn-floating pulse green" onClick={() => this.changeCapital({
-                    lat: 41.008238,
-                    lng: 28.978359
-                })}><i className="material-icons">Turk</i></a>
-                <a className="btn btn-floating pulse black" onClick={() => this.changeCapital({
-                    lat: 48.208174,
-                    lng: 16.373819
-                })}><i className="material-icons">Aust</i></a>
-                <a className="btn btn-floating pulse grey" onClick={() => this.changeCapital({
-                    lat: 43.942360,
-                    lng: 12.457777
-                })}><i className="material-icons">San </i></a>
-                <a className="btn btn-floating pulse white right" onClick={() => this.changeCapital({
-                    lat: Math.random() * 60,
-                    lng: Math.random() * 100
-                })}><i className="material-icons"></i></a>
-                
-                
+                    <div className="col s12 m3">
+                        <a className="waves-effect waves-light btn france" onClick={() => this.changeCapital({
+                            lat: 48.856614,
+                            lng: 2.352222
+                        })}></a>
+                    </div>
+                    <div className="col s12 m3">
+                        <a className="waves-effect waves-light btn ireland" onClick={() => this.changeCapital({
+                            lat: 53.349805,
+                            lng: -6.260310
+                        })}></a>
+                    </div>
+                    <div className="col s12 m3">
+                        <a className="waves-effect waves-light btn belgium" onClick={() => this.changeCapital({
+                            lat: 50.850346,
+                            lng: 4.351721
+                        })}></a>
+                    </div>
+                    <div className="col s12 m3">
+                        <a className="waves-effect waves-light btn estonia" onClick={() => this.changeCapital({
+                            lat: 59.436961,
+                            lng: 24.753575
+                        })}></a>
+                    </div>
+                    <div className="col s12 m3">
+                        <a className="waves-effect waves-light btn austria" onClick={() => this.changeCapital({
+                            lat: 48.208174,
+                            lng: 16.373819
+                        })}></a>
+                    </div>
+                    <div className="col s12 m3">
+                        <a className="waves-effect waves-light btn spain" onClick={() => this.changeCapital({
+                            lat: 40.416775,
+                            lng: -3.703790
+                        })}></a>
+                    </div>
+                    <div className="col s12 m3">
+                        <a className="waves-effect waves-light btn ukraine" onClick={() => this.changeCapital({
+                            lat: 50.450100,
+                            lng: 30.523400
+                        })}></a>
+                    </div>
+                    <div className="col s12 m3">
+                    <a className="btn bwaves-effect waves-light btn" onClick={() => this.changeCapital({
+                        lat: Math.random() * 60,
+                        lng: Math.random() * 100
+                    })}>Surprise</a>
+                    </div>
+
+                </div>
+
 
 
             </div>
