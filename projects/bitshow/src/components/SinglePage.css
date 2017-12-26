@@ -6,6 +6,8 @@
 .card{
     width: 20rem;
 }
-/* .card-body{
-    background: transparent;
-} */
+
+#actor-picture{
+    min-height: 10em;
+    max-height: 15em;
+}

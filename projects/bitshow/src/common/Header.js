@@ -48,14 +48,16 @@ export default class Header extends Component {
 
     render() {
         return (
-            <header>
+            <header className="container-fluid">
                 <nav className="row navbar navbar-dark justify-content-between">
-                    <Link to="/" className="navbar-brand col-3" id="bitshow"><h2>BitShow</h2></Link>
-
-                    <form className="form-inline">
+                   
+                    <Link to="/" className="navbar-brand col-3 col-md-4" id="bitshow"><h2>BitShow</h2></Link>
+                
+                    <form className="form-inline col-4 col-md-4 ">
                         <Search passingSeriesData={this.passingSeriesData} passingSearchedString={this.searchVisibilityOnOff} />
 
                     </form>
+               
                 </nav>
                 <ul className="list-group container-fluid" style={{ display: this.state.display, position: "absolute", top: 67, zIndex: 2 }}>
                     {this.state.seriesData.data.map(series =>

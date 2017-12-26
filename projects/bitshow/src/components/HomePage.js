@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import DataService from "../services/DataService";
 import ShowCard from "./ShowCard";
+import "./HomePage.css";
 
 
 export default class HomePage extends Component {
@@ -45,7 +46,7 @@ export default class HomePage extends Component {
                     <div className="row">
 
                         {this.state.series.map(series =>
-                            <Link to={`/single/${series.id}`} className="col-12 col-md-6 col-lg-4 text-center" key={series.id}>
+                            <Link to={`/single/${series.id}`} className="col-12 col-md-6 col-lg-4 text-center top-buffer" key={series.id}>
                                 <ShowCard image={series.image} name={series.name} key={series.id} />
                             </Link>
                         )}
