@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
 .App {
   text-align: center;
 }
@@ -46,8 +48,21 @@
   padding: 20px;
 }
 
+nav{
+  background: #FFE066;
+}
+
+.navbar-brand{
+  font-family: 'VT323', monospace;
+}
+
 .navbar-brand:hover {
   cursor: pointer;  
+}
+
+button{
+  background: #50514F;
+  color: white;
 }
 
 .sideVideosContainer p {

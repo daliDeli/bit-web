@@ -5,6 +5,8 @@ import Address from "./Address";
 import Company from "./Company";
 import NameSurname from "./NameSurname";
 
+import "../MainPage.css";
+
 export default class SingleAuthorsPage extends Component {
     constructor() {
         super();

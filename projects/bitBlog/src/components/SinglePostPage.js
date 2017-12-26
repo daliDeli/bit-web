@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { communicationService } from "../services/communicationService";
+import "./MainPage.css";
 
 export default class SinglePostPage extends Component {
     constructor() {
@@ -32,7 +33,7 @@ export default class SinglePostPage extends Component {
             return "Loading data";
         }
         return (
-            <div>
+            <main>
                 <div>
                     <h2> {this.state.post.title} </h2>
                 </div>
@@ -40,7 +41,7 @@ export default class SinglePostPage extends Component {
                     <p>{this.state.post.body}</p>
                 </div>
                
-            </div>
+            </main>
                     )
     }
 }

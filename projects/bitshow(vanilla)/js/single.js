@@ -1,48 +1,49 @@
-var id =  localStorage.getItem("id");
-
-
-var request = $.ajax({
-    url: "http://api.tvmaze.com/shows/" + id,
-    method: "GET",
+var id = localStorage.getItem('key');
+var singleShow = $.ajax({
+    url: 'http://api.tvmaze.com/shows/' + id,
+    method: 'GET',
     data: {
         embed: ['seasons', 'cast']
     }
+});
 
-})
+singleShow.done(e => {
 
+    console.log(e);
+    let title = $("<h1>");
+    let img = $("<img>");
 
-request.done(function(api){
-    console.log(api);
-    var seriesName = api.name;
-    var seriesSummary = api.summary ;
-     
-    for (var i = 0; i < 6; i++) {
-        var element = api._embedded.cast[i].character.name;
-        var parag = $("<p>");
-        var seriesCast = parag.text(element) ;
+    let titleMovie = e.name;
+    let imageLink = e.image.original;
+    title.text(titleMovie);
+    img.attr('src', imageLink);
 
-        $("#cast").after(seriesCast);
-        
-    }
+    let season = $("<ul>");
+    let numberOfSeasons = e._embedded.seasons.length;
+    e._embedded.seasons.forEach(function (element) {
+        let seasonItem = $("<li>");
+        seasonItem.text(`${element.premiereDate} ${element.endDate}`);
+        season.append(seasonItem);
 
-    for (var i = 0; i < api._embedded.seasons.length; i++) {
-        var element = api._embedded.seasons[i].premiereDate;
-        var parag = $("<p>");
-        var seriesCast = parag.text(element);
-        console.log(element);
+    }, this);
 
-        $("#season").after(seriesCast);
-    }
-    $("#season").append(api._embedded.seasons.length);
+    let cast = $('<ul>');
+    e._embedded.cast.forEach(function (element) {
+        let castItem = $("<li>");
+        castItem.text(`${element.character.name}`);
+        cast.append(castItem);
+    }, this);
 
-    var seriesImage = $("<img>").attr({
-        src: api.image.medium,
-        id: "singleImage"
-    });
+    let summaryDiv = $('<div>');
+    let summary = e.summary;
 
-    $(".imageDiv").append(seriesImage);
-    $(".paragDiv").append(seriesSummary);
-    
-})
+    summaryDiv.append(summary);
 
+    $('.container').append(summaryDiv);
+    $('#seasons-number').append(numberOfSeasons);
+    $('.seasons-div').append(season);
+    $('.cast-div').append(cast);
+    $('.container').prepend(title);
+    $('.image-div').append(img);
 
+});

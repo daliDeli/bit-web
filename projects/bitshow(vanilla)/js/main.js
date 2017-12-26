@@ -1,92 +1,76 @@
+let input = $('#searchMovie').val();
+console.log(input);
 
-var request = $.ajax({
-    url: "http://api.tvmaze.com/shows",
-    method: "GET"
+let request = $.ajax({
+    url: 'http://api.tvmaze.com/schedule/?country=US',
+    method: 'GET',
+});
 
-})
+request.done(output => {
+    console.log(output);
+    output.forEach((e, i) => {
+        let div = $('<div>');
+        let image = $('<img>');
+        let title = $('<h3>');
+        title.text(e.show.name);
+        let imageLink = e.show.image.medium || '#';
+        let link = $('<a>');
+        link.attr({
+            'value': e.show.id,
+            'href': '#'
+        });
 
-request.done(function (response) {
-    
-    for (var i = 0; i <= 50; i++) {
-        var seriesName = response[i].name;
-        var seriesImage = response[i].image.medium;
-        var seriesId = response[i].id;
-        
-        var createDiv = $("<div>").attr("class", "col-12 col-md-6 col-lg-4 placement");
-        var createImage = $("<img>").attr("src", seriesImage);
-        var createAnchor = $("<a>").attr({
-            href: 'single.html',
-            datashowid: seriesId,
-            target: "_blank",
-            class: "seriesName"
-        }).text(seriesName);
-        
-        // console.log(response[i].id);
-        $(".row").append(createDiv);
-        $(createDiv).append(createImage);
-        $(createDiv).append(createAnchor);
-        
-    }
+        link.append(title);
+        image.attr('src', imageLink);
+        div.append(image);
+        div.append(link);
+        div.attr('class', 'col-sm-12 col-md-6 col-lg-4 elementItem');
 
-})
-
-// $(document).on("click", ".seriesName", function(){
-//     var currentID = $(this).attr("datashowid");
-//     localStorage.setItem("id", currentID);
-
-// })
-
-// Search shows by name
-$(document).on("keyup", "input", function(event){
-    console.log(this)
-    console.log($(this))
-    var search = $(this).val();
-    console.log(`ukucano je ${search}`);
-
-    var requestShow = $.ajax({
-        url: "http://api.tvmaze.com/search/shows?q="+ search,
-        method: "GET"
+        $('.row').append(div);
     })
-    
-    
-    requestShow.done(function (response) {
-        console.log("this is a fetch",response);
-        var createUl = $("<ul>");
-        createUl.attr("id", "showSearch")
-        createUl.text("");
-        
-        for(var i = 0; i < response.length; i++){
-            
-            var element= response[i].show
-            console.log(element.id);
-            var createLi =  $("<li>");
-            var createAnchor = $("<a>");
-            createAnchor.attr({"class": "sendOnClick", "href": "#","datashowid":element.id});
-            
+});
 
-            createLi.append(element.name);
-            createAnchor.append(createLi);
-            createUl.append(createAnchor);
+
+
+$(document).on('change keyup paste', '#searchMovie', function () {
+    let input = $('#searchMovie').val();
+    console.log(input);
+
+    let request = $.ajax({
+        url: 'http://api.tvmaze.com/search/shows',
+        method: 'GET',
+        data: {
+            q: input
         }
+    });
 
-        
-        $(document).on('click', '.sendOnClick', (event) =>{
-            event.preventDefault(); 
-            var searchId = $(".sendOnClick").attr("datashowid");
-            console.log(searchId);
-            localStorage.setItem("id", searchId);
-            location.assign("single.html")
+    request.done(output => {
+
+        $('.searchList').html('');
+        console.log(output);
+        output.forEach((e, i) => {
+            let title = $('<li>');
+            let link = $('<a>');
+
+            link.text(e.show.name);
+            link.attr({
+                'value': e.show.id,
+                'href': '#'
+            });
+
+            title.append(link);
+            $('.searchList').append(title);
         })
-        $(".navbar").append(createUl);
-    })
-} )
-    
-    
+    });
 
 
+});
 
 
+$(document).on('click', 'a', function () {
+    var id = $(this).attr('value');
 
-
-
+    localStorage.setItem('key', id);
+    location.replace('single.html');
+});
 

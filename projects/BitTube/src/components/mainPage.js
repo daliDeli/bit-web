@@ -115,38 +115,34 @@ class MainPage extends Component {
 
         return (
             <div>
-                <div>
 
+                <nav className="navbar justify-content-between">
+                    <a className="navbar-brand" onClick={this.logoClickHandler} style={{ color: "white" }}><h2> BitTube</h2></a>
+                    <form className="form-inline">
+                        <input className="form-control mr-sm-2" onChange={this.handleInputChange} value={this.state.searchTerm} type="text" placeholder="Search" />
+                        <button className="btn  my-2 my-sm-0" onClick={this.dispatchSearch}>Search</button>
+                    </form>
+                </nav>
 
-                    <nav className="navbar navbar-dark bg-dark justify-content-between">
-                        <a className="navbar-brand" onClick={this.logoClickHandler} style={{ color: "white" }}>YTSearch</a>
-                        <form className="form-inline">
-                            <input className="form-control mr-sm-2" onChange={this.handleInputChange} value={this.state.searchTerm} type="text" placeholder="Search" />
-                            <button className="btn btn-info my-2 my-sm-0" onClick={this.dispatchSearch}>Search</button>
-                        </form>
-                    </nav>
-
-                    <div className="row">
-                        <div className="col-7 offset-1 mainVideoContainer">
-                            {this.processVideoUrl(this.state.newVideos[0])}
-                        </div>
-
-
-                        <div className="col-3 offset-1">
-                            <div onClick={this.handleClick} className="previousVideoContainer" style={{ display: this.state.previousVideoDisplay }}>
-                                <h1>Previous video</h1>
-                                {this.processVideoThumbnail(this.state.previousVideo)}
-                            </div>
-                            <div onClick={this.handleClick} className="sideVideosContainer">
-                                <h1>Recommended videos</h1>
-                                {this.state.newVideos.slice(1).map((video) => {
-                                    return this.processVideoThumbnail(video);
-                                })}
-                            </div>
-                        </div>
+                <div className="row">
+                    <div className="col-7 offset-1 mainVideoContainer">
+                        {this.processVideoUrl(this.state.newVideos[0])}
                     </div>
 
-                </div >
+
+                    <div className="col-3 offset-1">
+                        <div onClick={this.handleClick} className="previousVideoContainer" style={{ display: this.state.previousVideoDisplay }}>
+                            <h1>Previous video</h1>
+                            {this.processVideoThumbnail(this.state.previousVideo)}
+                        </div>
+                        <div onClick={this.handleClick} className="sideVideosContainer">
+                            <h1>Recommended videos</h1>
+                            {this.state.newVideos.slice(1).map((video) => {
+                                return this.processVideoThumbnail(video);
+                            })}
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

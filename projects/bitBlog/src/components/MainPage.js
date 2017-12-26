@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import Post from "./Post";
 import { communicationService } from "../services/communicationService";
+import "./MainPage.css";
 
 export default class MainPage extends Component {
     constructor() {
@@ -39,7 +40,7 @@ export default class MainPage extends Component {
 
     render() {
         return (
-            <main className="container">
+            <main className="container-fluid">
                 <h2 >
                     POSTS
                 </h2>
