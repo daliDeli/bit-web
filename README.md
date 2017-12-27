@@ -24,7 +24,7 @@ Module Loader:  Webpack
 Package Manager:  npm
 
 ## BITSHOW
-BitShow is a Single Page Application built using React and Redux libraries, where you can search for existing TV shows or take a look at featured ones. Data provided by tvmaze.com. Fully responsive.
+BitShow is a Single Page Application built using React library, where you can search for existing TV shows or take a look at featured ones. Data provided by tvmaze.com. Fully responsive.
 
 ### Showcasing
 -   React
