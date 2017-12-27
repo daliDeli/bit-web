@@ -21,7 +21,7 @@ BitBook is a Social Media Single Page Application. Users can create an account, 
 Language:   HTML5, CSS3, JS(ES6)
 Framework:  React, MaterializeCSS
 Module Loader:  Webpack
-Package Manager:  Yarn
+Package Manager:  npm
 
 ## BITSHOW
 BitShow is a Single Page Application built using React and Redux libraries, where you can search for existing TV shows or take a look at featured ones. Data provided by tvmaze.com. Fully responsive.
