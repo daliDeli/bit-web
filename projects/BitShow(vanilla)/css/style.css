@@ -1,15 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{  
-    font-family: sans-serif;
-    position: relative;
-}
+@import url('https://fonts.googleapis.com/css?family=Mukta+Mahee');
 
-.bg-light{
-    background-color: black !important;
+body{  
+    font-family:'Mukta Mahee', sans-serif;
+    
+}
+nav{
+    background-color: blue !important;
     color: white;
 }
 h1{
@@ -17,6 +13,7 @@ h1{
     padding: 20px;
 }
 .navbar-light .navbar-brand {
+    font-size: 2em;
     color: white;
 }
 .elementItem {
@@ -56,12 +53,7 @@ div{
     border-bottom: 1px solid rgb(199, 194, 194);
 }
 
-.searchList li:hover{
-    background-color: rgb(48, 48, 48);
-}
-
 .searchList li a :hover{
-    color: white;
     text-decoration: none;
 }
 
