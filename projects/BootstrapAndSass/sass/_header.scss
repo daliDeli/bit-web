@@ -1,0 +1,14 @@
+.background-green {
+    background: rgb(4, 153, 108);
+    text-align: center;
+    padding-bottom: 20px;
+    color: white;
+    #profile {
+        padding: 20px 0 20px 0;
+    }
+    hr.style-two {
+        border: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(17, 16, 16, 0), rgba(230, 228, 228, 0.75), rgba(0, 0, 0, 0));
+    }
+}
