@@ -2,24 +2,21 @@
 
 body{  
     font-family:'Mukta Mahee', sans-serif;
-    
 }
+
 nav{
-    background-color: blue !important;
-    color: white;
+    background:linear-gradient(#0f0c29, #302b63, #24243e);
 }
+
 h1{
     text-align: center;
     padding: 20px;
 }
-.navbar-light .navbar-brand {
-    font-size: 2em;
-    color: white;
-}
-.elementItem {
-    border: 1px solid rgb(138, 138, 138);
-}
 
+.navbar-brand{
+    color:white;
+    font-size: 1.5em;
+}
 .elementItem img {
     width: 100%;
     padding: 0;
@@ -28,9 +25,6 @@ h1{
     width: 100%;
 }
 
-.seasons-div, .cast-div {
-    padding: 20px 50px;
-}
 div{
     padding: 10px;
 }
@@ -52,8 +46,7 @@ div{
     padding: 5px;
     border-bottom: 1px solid rgb(199, 194, 194);
 }
-
-.searchList li a :hover{
+a:hover{
     text-decoration: none;
 }
 
